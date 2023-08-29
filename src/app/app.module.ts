@@ -9,12 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DateComponent } from './date/date.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     DateComponent,
-
   ],
   imports: [
     BrowserModule,

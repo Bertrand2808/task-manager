@@ -36,4 +36,8 @@ export class TaskFacade {
   deleteTask(task: Task): void {
     this.crudService.deleteTask(task);
   }
+
+  deleteTaskByName(id: number): void {
+    this.crudService.deleteTaskByName(id);
+  }
 }

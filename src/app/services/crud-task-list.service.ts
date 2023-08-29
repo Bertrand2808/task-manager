@@ -10,21 +10,21 @@ export class CRUDTaskListService implements CRUDTaskList{
   public tasks: Task[] = [
     {
       id: 1,
-      titre: 'Ménage',
+      titre: 'MENAGE',
       description: 'Faire le ménage dans la chambre',
       date: new Date(),
       etat: EtatTache.TERMINEE
     },
     {
       id: 2,
-      titre: 'Cuisine',
+      titre: 'CUISINE',
       description: 'Faire la cuisine pour le repas du soir',
       date: new Date(),
       etat: EtatTache.EN_COURS
     },
     {
       id: 3,
-      titre: 'Angular',
+      titre: 'ANGULAR',
       description: 'Finir le cours électif Angular',
       date: new Date(),
       etat: EtatTache.A_FAIRE
@@ -60,6 +60,13 @@ export class CRUDTaskListService implements CRUDTaskList{
 
   deleteTask(task: Task): void {
     const index = this.tasks.findIndex(t => t.id === task.id);
+    this.tasks.splice(index, 1);
+    this.tasksSubject.next(this.tasks);
+    this.updateId();
+  }
+
+  deleteTaskByName(id: number): void {
+    const index = this.tasks.findIndex(t => t.id === id);
     this.tasks.splice(index, 1);
     this.tasksSubject.next(this.tasks);
     this.updateId();

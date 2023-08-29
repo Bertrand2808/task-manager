@@ -17,4 +17,8 @@ export class NavBarComponent {
   goToNewTask() {
     this.router.navigate(['/add']);
   }
+
+  goToDeleteTask() {
+    this.router.navigate(['/delete']);
+  }
 }

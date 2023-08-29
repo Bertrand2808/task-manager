@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EtatTache, Task } from '../../models/tasks.models';
 import { TaskFacade } from '../services/task-facade.service';
@@ -42,11 +42,10 @@ export class AddTaskFormComponent {
 
   onSubmit(event: Event): void {
     event.preventDefault();
-    console.log(this.taskForm.valid);
     if (this.taskForm.valid) {
       const newTask: Task = {
         id: this.lastIndex + 1,
-        titre: this.taskForm.value.titre,
+        titre: this.taskForm.value.titre.toUpperCase(),
         description: this.taskForm.value.description,
         date: new Date(),
         etat: EtatTache.A_FAIRE

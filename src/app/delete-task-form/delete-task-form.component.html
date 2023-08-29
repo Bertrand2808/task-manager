@@ -1,0 +1,23 @@
+<form [formGroup]="deleteForm" (ngSubmit)="onSubmit($event)"
+  style="display: grid;align-items: center;justify-content: center;">
+  <h1 class="text-center m-5" style="font-size: x-large;font: bold;">Supprimer une tâche !</h1>
+  <div class="form-group">
+    <label class="m-2">
+      Titre de la tâche à supprimer :
+      <input type="text" formControlName="titre" class="form-control" />
+      <div
+        *ngIf="deleteForm.controls['titre'].invalid && (deleteForm.controls['titre'].dirty || deleteForm.controls['titre'].touched)"
+        class="text-center" style="align-items: center;justify-content: center;">
+        <div *ngIf="deleteForm.controls['titre'].errors?.['required']" class="alert alert-danger">
+          <app-error-required-field-form [showError]="deleteForm.controls['titre'].errors?.['required']"
+            fieldName="Titre"></app-error-required-field-form>
+        </div>
+      </div>
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary m-3">Supprimer Tâche</button>
+</form>
+<div class="row justify-content" *ngIf="taskList">;
+  <app-task *ngFor="let task of taskList; let indexTask = index" class="col-4 p-3" [task]="task"
+    [lastIndex]="task.id"></app-task>
+</div>
