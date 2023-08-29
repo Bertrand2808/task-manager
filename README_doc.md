@@ -194,3 +194,24 @@ export class HttpDataService {
 ```
 
 Ici, on utilise la méthode `get()` du module HttpClient pour faire une requête HTTP de type GET. On lui passe en paramètre l'url de l'API et on lui précise le type de données que l'on veut récupérer.
+
+## Les React Forms
+
+Pour créer un formulaire réactif, d'abord créer un module à part :
+- `ng g m nom-du-module` ou `ng generate module nom-du-module` : pour créer un module
+
+Ensuite, créer un composant pour le formulaire :
+
+- `ng g c nom-du-composant` ou `ng generate component nom-du-composant` : pour créer un composant
+
+Dans le fichier `nom-du-composant.component.html`, créer le formulaire :
+```html
+
+```
+
+Dans le fichier `nom-du-composant.component.ts`, créer le formulaire :
+```typescript
+
+```
+
+

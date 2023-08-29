@@ -13,11 +13,17 @@ import { TasksRoutingModule } from './tasks-routing.module';
     EtatColorDirective,
     TaskComponent,
     MainTaskComponent,
-    TaskListComponent
+    TaskListComponent,
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+    ],
+  exports: [
+    MainTaskComponent,
+    TaskListComponent,
+    TaskComponent,
+    MainTaskComponent,
   ]
 })
 export class TasksModule { }

@@ -25,6 +25,10 @@ export class TaskFacade {
     this.crudService.addTask(task);
   }
 
+  addTaskForm(task: Task): void {
+    this.crudService.addTaskForm(task);
+  }
+
   updateTask(task: Task): void {
     this.crudService.updateTask(task);
   }

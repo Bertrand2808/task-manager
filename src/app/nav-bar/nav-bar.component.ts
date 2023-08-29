@@ -14,4 +14,7 @@ export class NavBarComponent {
   goToDate() {
     this.router.navigate(['/date']);
   }
+  goToNewTask() {
+    this.router.navigate(['/add']);
+  }
 }

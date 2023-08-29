@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CRUDTaskListService } from './crud-task-list.service';
 import { Task } from '../../models/tasks.models';
 import { Observable, map } from 'rxjs';
-import { ByStatutTaskList } from '../intefaces/by-status-task-list';
+import { ByStatutTaskList } from './intefaces/by-status-task-list';
 
 @Injectable({
   providedIn: 'root'

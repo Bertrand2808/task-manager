@@ -1,0 +1,36 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit($event)"
+  style="display: grid;align-items: center;justify-content: center;">
+  <h1 class="text-center m-5" style="font-size: x-large;font: bold;">Ajouter une tâche !</h1>
+  <div class="form-group">
+    <label class="m-2">
+      Titre :
+      <input type="text" formControlName="titre" class="form-control" />
+      <div
+        *ngIf="taskForm.controls['titre'].invalid && (taskForm.controls['titre'].dirty || taskForm.controls['titre'].touched)"
+        class="text-center" style="align-items: center;justify-content: center;">
+        <div *ngIf="taskForm.controls['titre'].errors?.['required']" class="alert alert-danger">Titre est obligatoire
+        </div>
+        <div *ngIf="taskForm.controls['titre'].errors?.['minlength']" class="alert alert-danger">Titre doit contenir au
+          moins 3 caractères</div>
+        <div *ngIf="taskForm.controls['titre'].errors?.['maxlength']" class="alert alert-danger">Titre doit contenir au
+          plus 20 caractères</div>
+      </div>
+    </label>
+    <label class="m-2">
+      Description :
+      <input type="text" formControlName="description" class="form-control" />
+      <div
+        *ngIf="taskForm.controls['description'].invalid && (taskForm.controls['description'].dirty || taskForm.controls['description'].touched)">
+        <div *ngIf="taskForm.controls['description'].errors?.['required']" class="alert alert-danger">Description est
+          obligatoire</div>
+        <div *ngIf="taskForm.controls['description'].errors?.['minlength']" class="alert alert-danger">Description doit
+          contenir au moins 3
+          caractères</div>
+        <div *ngIf="taskForm.controls['description'].errors?.['maxlength']" class="alert alert-danger">Description doit
+          contenir au plus 20
+          caractères</div>
+      </div>
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary m-3">Ajouter Tâche</button>
+</form>

@@ -1,4 +1,4 @@
-import { Task } from '../../models/tasks.models';
+import { Task } from '../../../models/tasks.models';
 import { CRUDTaskList } from './crud-task-list';
 import { Observable } from 'rxjs';
 
