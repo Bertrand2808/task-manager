@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary mb-3" (click)="createNewTask()" style="border-radius: 2rem;">Créer une nouvelle
+      tâche</button>
+  </div>
+  <div class="col ml-10">
+    <button class="btn btn-primary mb-3" (click)="resetFilteredTaskList()">Toutes</button>
+    <button class="btn btn-primary mb-3" (click)="updateFilteredTaskList('EN_COURS')">En cours</button>
+    <button class="btn btn-danger mb-3" (click)="updateFilteredTaskList('A_FAIRE')">A faire</button>
+    <button class="btn btn-success mb-3" (click)="updateFilteredTaskList('TERMINEE')">Terminée</button>
+  </div>
+</div>
+<div class="row justify-content" *ngIf="filteredTaskList">
+  <app-task *ngFor="let task of filteredTaskList; let indexTask = index" class="col-4 p-3" [task]="task"
+    [indexTask]="indexTask+1"></app-task>
+</div>
