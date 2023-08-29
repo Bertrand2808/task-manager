@@ -8,27 +8,41 @@
       <div
         *ngIf="taskForm.controls['titre'].invalid && (taskForm.controls['titre'].dirty || taskForm.controls['titre'].touched)"
         class="text-center" style="align-items: center;justify-content: center;">
-        <div *ngIf="taskForm.controls['titre'].errors?.['required']" class="alert alert-danger">Titre est obligatoire
+        <div *ngIf="taskForm.controls['titre'].errors?.['required']" class="alert alert-danger">
+          <app-error-required-field-form [showError]="taskForm.controls['titre'].errors?.['required']"
+            fieldName="Titre"></app-error-required-field-form>
         </div>
-        <div *ngIf="taskForm.controls['titre'].errors?.['minlength']" class="alert alert-danger">Titre doit contenir au
-          moins 3 caractères</div>
-        <div *ngIf="taskForm.controls['titre'].errors?.['maxlength']" class="alert alert-danger">Titre doit contenir au
-          plus 20 caractères</div>
+        <div *ngIf="taskForm.controls['titre'].errors?.['minlength']" class="alert alert-danger">
+          <app-error-minLength-field-form [showError]="taskForm.controls['titre'].errors?.['minlength']"
+            fieldName="Titre"></app-error-minLength-field-form>
+        </div>
+        <div *ngIf="taskForm.controls['titre'].errors?.['maxlength']" class="alert alert-danger">
+          <app-error-maxLength-field-form [showError]="taskForm.controls['titre'].errors?.['maxlength']"
+            fieldName="Titre"></app-error-maxLength-field-form>
+        </div>
       </div>
     </label>
     <label class="m-2">
       Description :
       <input type="text" formControlName="description" class="form-control" />
       <div
-        *ngIf="taskForm.controls['description'].invalid && (taskForm.controls['description'].dirty || taskForm.controls['description'].touched)">
-        <div *ngIf="taskForm.controls['description'].errors?.['required']" class="alert alert-danger">Description est
-          obligatoire</div>
-        <div *ngIf="taskForm.controls['description'].errors?.['minlength']" class="alert alert-danger">Description doit
-          contenir au moins 3
-          caractères</div>
-        <div *ngIf="taskForm.controls['description'].errors?.['maxlength']" class="alert alert-danger">Description doit
-          contenir au plus 20
-          caractères</div>
+        *ngIf="taskForm.controls['description'].invalid && (taskForm.controls['description'].dirty || taskForm.controls['description'].touched)"
+        class="text-center" style="align-items: center;justify-content: center;">
+        <div
+          *ngIf="taskForm.controls['description'].invalid && (taskForm.controls['description'].dirty || taskForm.controls['description'].touched)">
+          <div *ngIf="taskForm.controls['description'].errors?.['required']" class="alert alert-danger">
+            <app-error-required-field-form [showError]="taskForm.controls['description'].errors?.['required']"
+              fieldName="Description"></app-error-required-field-form>
+          </div>
+          <div *ngIf="taskForm.controls['description'].errors?.['minlength']" class="alert alert-danger">
+            <app-error-minLength-field-form [showError]="taskForm.controls['titre'].errors?.['minlength']"
+              fieldName="Description"></app-error-minLength-field-form>
+          </div>
+          <div *ngIf="taskForm.controls['description'].errors?.['maxlength']" class="alert alert-danger">
+            <app-error-maxLength-field-form [showError]="taskForm.controls['titre'].errors?.['maxlength']"
+              fieldName="Description"></app-error-maxLength-field-form>
+          </div>
+        </div>
       </div>
     </label>
   </div>

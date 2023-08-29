@@ -14,6 +14,7 @@ import { DateComponent } from './date/date.component';
     AppComponent,
     NavBarComponent,
     DateComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -22,6 +23,9 @@ import { DateComponent } from './date/date.component';
     NgbModule,
     RouterModule,
     AppRoutingModule,
+  ],
+  exports: [
+
   ],
   providers: [],
   bootstrap: [AppComponent]

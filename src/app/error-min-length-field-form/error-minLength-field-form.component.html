@@ -1,0 +1,6 @@
+<div *ngIf="showError && fieldName==='Titre'" class="error-message">
+  {{ fieldName }} doit contenir au moins 3 caractères.
+</div>
+<div *ngIf="showError && fieldName==='Description'" class="error-message">
+  {{ fieldName }} doit contenir au moins 10 caractères.
+</div>
