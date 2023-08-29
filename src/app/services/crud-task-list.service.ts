@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EtatTache, Task } from '../../models/tasks.models';
+import { CRUDTaskList } from '../intefaces/crud-task-list';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CRUDTaskListService {
+export class CRUDTaskListService implements CRUDTaskList{
   public tasks: Task[] = [
     {
       titre: 'Ménage',
@@ -28,8 +29,7 @@ export class CRUDTaskListService {
   ];
   private tasksSubject: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>(this.tasks);
 
-  constructor() {
-  }
+  constructor() {}
 
   getTasks(): Observable<Task[]> {
     return this.tasksSubject.asObservable();

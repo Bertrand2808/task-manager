@@ -14,3 +14,11 @@
   <app-task *ngFor="let task of filteredTaskList; let indexTask = index" class="col-4 p-3" [task]="task"
     [indexTask]="indexTask+1"></app-task>
 </div>
+<div class="row justify-content bg-primary"
+  style="justify-content: center;font: bold; border-radius: 2rem; padding: 10px;color: white;font-size: x-large;margin-top: 10px;">
+  Tâche
+  terminée(s)</div>
+<div class="row justify-content" *ngIf="doneTaskList">;
+  <app-task *ngFor="let task of doneTaskList; let indexTask = index" class="col-4 p-3" [task]="task"
+    [indexTask]="indexTask+1"></app-task>
+</div>

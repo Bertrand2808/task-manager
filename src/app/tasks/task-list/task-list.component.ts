@@ -18,12 +18,17 @@ export class TaskListComponent {
     private byStatutService: ByStatutTaskListService
     ) { }
   ngOnInit(): void {
+    // récupérer les tâches
     this.crudService.getTasks().subscribe((tasks: Task[]) => {
       this.taskList = tasks;
       this.filteredTaskList = this.taskList;
     });
-
+    // récupérer les tâches terminées
+    this.byStatutService.getTasksByStatut(EtatTache.TERMINEE).subscribe((doneTasks: Task[]) => {
+      this.doneTaskList = doneTasks;
+    });
   }
+  // ajouter une tâche
   createNewTask(): void {
     const newTask: Task = {
       titre: 'Nouvelle tâche',
