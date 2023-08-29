@@ -1,4 +1,4 @@
-import { ErrorRequiredFieldFormComponent } from './../error-required-field-form/error-required-field-form.component';
+import { ErrorRequiredFieldFormComponent } from '../shared/error-required-field-form/error-required-field-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddTaskFormComponent } from './add-task-form.component';
@@ -6,8 +6,8 @@ import { MainAddTaskFormComponent } from './main-add-task-form/main-add-task-for
 import { AddTaskRoutingModule } from './add-task-form-routing.module';
 import { TasksModule } from '../tasks/tasks.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ErrorMinLengthFieldFormComponent } from '../error-min-length-field-form/error-minLength-field-form.component';
-import { ErrorMaxLengthFieldFormComponent } from '../error-max-length-field-form/error-maxLength-field-form.component';
+import { ErrorMinLengthFieldFormComponent } from '../shared/error-min-length-field-form/error-minLength-field-form.component';
+import { ErrorMaxLengthFieldFormComponent } from '../shared/error-max-length-field-form/error-maxLength-field-form.component';
 
 
 @NgModule({
