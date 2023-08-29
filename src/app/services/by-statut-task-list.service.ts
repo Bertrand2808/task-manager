@@ -16,6 +16,9 @@ export class ByStatutTaskListService implements ByStatutTaskList {
   addTask(task: Task): void {
     throw new Error('Method not implemented.');
   }
+  deleteTask(task: Task): void {
+    throw new Error('Method not implemented.');
+  }
 
   getTasksByStatut(statut: string): Observable<Task[]> {
     return this.crudService.getTasks().pipe(

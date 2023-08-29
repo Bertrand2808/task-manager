@@ -1,8 +1,7 @@
 <div class="card p-3" style="max-width: 425px;">
   <div class="ps-2">
     <p class="text-primary fs-3 mb-2 fw-bold">
-      <span class="index" *ngIf="!indexTask">Tâche : {{ indexTask }}</span>
-      <span class="index" *ngIf="indexTask">Tâche : {{ indexTask }}</span>
+      <span class="index">Tâche : {{ task.id }}</span>
     </p>
     <p><span class="fw-bold">Nom: </span>{{ task.titre | uppercase }}</p>
     <p><span class="fw-bold">Description: </span>{{ task.description }}</p>
@@ -10,10 +9,11 @@
     <p>
       <span class="fw-bold">Status :</span>
       <button class="ms-2 py-0" mat-flat-button color="primary" [etatColor]="task.etat"
-        style="color:white;border: none;border-radius: 1rem;">
+        style="color:white;border: none;border-radius: 1rem;" (click)="updateStatut(task)">
         {{ task.etat }}
       </button>
-
     </p>
+    <button class="ms-2 py-0 bg-danger" style="color: white;" mat-flat-button="danger"
+      (click)="deleteTask(task)">Supprimer</button>
   </div>
 </div>

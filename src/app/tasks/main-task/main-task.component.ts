@@ -8,6 +8,7 @@ import { EtatTache, Task } from '../../../models/tasks.models'
 export class MainTaskComponent {
   // création d'une nouvelle tâche
   task: Task = {
+    id : 1,
     titre : "Nouvelle tâche",
     description : "Description de la tâche",
     date : new Date(),

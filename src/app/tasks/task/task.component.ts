@@ -1,6 +1,6 @@
-// création du component qui va initialiser une tache et afficher ses données
 import { EtatTache, Task } from '../../../models/tasks.models';
 import { Component, Input, OnInit } from '@angular/core';
+import { TaskFacade } from 'src/app/services/task-facade.service';
 
 @Component({
   selector: 'app-task',
@@ -10,7 +10,17 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class TaskComponent {
   @Input() task!: Task;
-  @Input() indexTask: number = 1;
-  constructor() { }
+  @Input() lastIndex!: number;
+  constructor(private taskFacade: TaskFacade) { }
   ngOnInit(): void {}
+
+  // changer l'état de la tâche
+  updateStatut(task: Task): void {
+    this.taskFacade.updateTask(task);
+  }
+
+  // supprimer une tâche
+  deleteTask(task: Task): void {
+    this.taskFacade.deleteTask(task);
+  }
 }

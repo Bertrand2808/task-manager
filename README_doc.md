@@ -117,3 +117,80 @@ Pour créer un module :
 Pour créer un service :
 - `ng g s nom-du-service` ou `ng generate service nom-du-service` : pour créer un service
 
+# 2eme cours
+## Les Observables
+
+### Mettre en place le module HttpClient
+
+Pour mettre en place le module HttpClient, il faut l'importer dans le fichier `app.module.ts` :
+```typescript
+import { HttpClientModule } from '@angular/common/http';
+```
+
+Il faut créer un service pour faire les requêtes HTTP :
+```typescript
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Task } from '../models/task';
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class HttpDataService {
+  private baseUrl = 'http://domain/data';
+
+  constructor(private http: HttpClient) { }
+  [méthodes...]
+}
+```
+
+Pour ensuite utiliser le service dans le composant :
+```typescript
+import { Task } from '../models/task';
+import { HttpDataService } from '../services/http-data.service';
+
+@Component({
+  selector: 'app-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrls: ['./task-list.component.scss']
+})
+export class TaskListComponent implements OnInit {
+  tasks: Task[] = [];
+
+  constructor(private httpDataService: HttpDataService) { }
+
+  ngOnInit(): void {
+    this.httpDataService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
+  }
+}
+```
+
+Ici, on utilise la méthode `getTasks()` du service `HttpDataService` pour récupérer les tâches. On utilise la méthode `subscribe()` pour s'abonner à l'observable et récupérer les données.
+
+Ensuite il faut souscrire à l'observable dans le service :
+```typescript
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Task } from '../models/task';
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class HttpDataService {
+  private baseUrl = 'http://domain/data';
+
+  constructor(private http: HttpClient) { }
+
+  getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(`${this.baseUrl}/tasks`);
+  }
+}
+```
+
+Ici, on utilise la méthode `get()` du module HttpClient pour faire une requête HTTP de type GET. On lui passe en paramètre l'url de l'API et on lui précise le type de données que l'on veut récupérer.
