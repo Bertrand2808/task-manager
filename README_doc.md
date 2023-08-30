@@ -406,8 +406,12 @@ ensuite pour lancer le test :
 
 Cela va ouvrir un navigateur avec les tests unitaires et afficher les tests qui ont réussi et ceux qui ont échoué.
 
+### Code Coverage :
+
 D'après le code coverage, mes pourcentages de couverture de test sont de :
 - Statements : 93.02%
 - Branches : 72.72%
 - Functions : 87.71%
 - Lines : 92.56%
+
+![Alt text](image.png)
