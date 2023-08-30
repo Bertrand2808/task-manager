@@ -31,3 +31,25 @@
   371  ng g c date
   372  ng g directive etat-color
   373  ng g service crud-task-list
+
+## Création des services et des interfaces
+  378 ng g service crud-task-list
+  379 ng g service by-status-task-list
+  380 ng g interface crud-task-list
+  381 ng g interface by-status-task-list
+  382 ng g s task-facade
+
+## Création du reactive form
+  387 ng g module AddTaskForm
+  388 ng g c add-task-form
+  389 ng g c main-add-task-form
+  390 ng g c error-minLenght-field-form
+  391 ng g c error-maxLenght-field-form
+  392 ng g c error-required-field-form
+  396 ng g module DeleteTaskForm
+  397 ng g c delete-task-form
+  398 ng g c main-delete-task-form
+
+## Création du module Shared
+  367  ng g module shared
+

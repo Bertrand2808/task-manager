@@ -4,11 +4,11 @@ import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
   selector: '[etatColor]'
 })
 export class EtatColorDirective {
-  @Input() set etatColor(etat: string | undefined) {
+  @Input() set etatColor(etat: string) {
     const classMap: { [key: string]: string } = {
       'TERMINEE': 'bg-success',
       'EN_COURS': 'bg-primary',
-      'A_FAIRE': 'bg-danger'
+      'A_FAIRE': 'bg-danger',
     };
 
     const cssClass = classMap[etat || ''];

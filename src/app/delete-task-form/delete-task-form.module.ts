@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ErrorMaxLengthFieldFormComponent } from '../shared/error-max-length-field-form/error-maxLength-field-form.component';
-import { ErrorMinLengthFieldFormComponent } from '../shared/error-min-length-field-form/error-minLength-field-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { ErrorRequiredFieldFormComponent } from '../shared/error-required-field-form/error-required-field-form.component';
 import { TasksModule } from '../tasks/tasks.module';
 import { MainDeleteTaskFormComponent } from './main-delete-task-form/main-delete-task-form.component';
 import { DeleteTaskFormComponent } from './delete-task-form.component';
 import { DeleteTaskRoutingModule } from './delete-task-form-routing.module';
-
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,9 +18,7 @@ import { DeleteTaskRoutingModule } from './delete-task-form-routing.module';
     TasksModule,
     ReactiveFormsModule,
     FormsModule,
-    ErrorMaxLengthFieldFormComponent,
-    ErrorMinLengthFieldFormComponent,
-    ErrorRequiredFieldFormComponent
+    SharedModule
   ],
   exports: [
     DeleteTaskFormComponent,

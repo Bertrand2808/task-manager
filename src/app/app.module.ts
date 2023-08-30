@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DateComponent } from './date/date.component';
+import { DateFormatComponent } from './date-format/date-format.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DateComponent } from './date/date.component';
     AppComponent,
     NavBarComponent,
     DateComponent,
+    DateFormatComponent,
   ],
   imports: [
     BrowserModule,
